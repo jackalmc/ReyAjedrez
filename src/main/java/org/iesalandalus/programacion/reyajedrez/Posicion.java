@@ -15,9 +15,9 @@ public class Posicion {
 
     public void setColumna(char columna) {
         if (columna > 'h')
-            throw new IllegalArgumentException("La columna no puede ser mayor que 8");
+            throw new IllegalArgumentException("La columna no puede ser mayor que h");
         else if (columna < 'a')
-            throw new IllegalArgumentException("La columna no puede ser menor que 1");
+            throw new IllegalArgumentException("La columna no puede ser menor que a");
         else
             this.columna = columna;
     }
@@ -30,5 +30,9 @@ public class Posicion {
         return columna;
     }
 
+    public Posicion(int fila, char columna){
+        setFila(fila);
+        setColumna(columna);
+    }
 
 }
