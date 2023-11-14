@@ -12,6 +12,14 @@ public class Rey {
         totalMovimientos = 0;
     }
 
+    public Rey(Color color){
+        this();
+        if (color == Color.BLANCO)
+            posicion = new Posicion(1, 'e');
+        else
+            posicion = new Posicion(8,'e');
+    }
+
     public Color getColor() {
         return color;
     }
