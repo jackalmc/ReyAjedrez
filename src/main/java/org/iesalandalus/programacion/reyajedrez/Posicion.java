@@ -15,7 +15,7 @@ public class Posicion {
         setColumna(posicion.getColumna());
     }
 
-    public void setFila(int fila) {
+    private void setFila(int fila) {
         if (fila>8)
             throw new IllegalArgumentException("La fila no puede ser mayor que 8");
         else if (fila < 1)
@@ -24,7 +24,7 @@ public class Posicion {
             this.fila = fila;
     }
 
-    public void setColumna(char columna) {
+    private void setColumna(char columna) {
         if (columna > 'h')
             throw new IllegalArgumentException("La columna no puede ser mayor que h");
         else if (columna < 'a')

@@ -10,7 +10,7 @@ public class Rey {
         return color;
     }
 
-    public void setColor(Color color) {
+    private void setColor(Color color) {
         this.color = color;
     }
 
@@ -18,7 +18,7 @@ public class Rey {
         return posicion;
     }
 
-    public void setPosicion(Posicion posicion) {
+    private void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
 
@@ -26,7 +26,7 @@ public class Rey {
         return totalMovimientos;
     }
 
-    public void setTotalMovimientos(int totalMovimientos) {
+    private void setTotalMovimientos(int totalMovimientos) {
         this.totalMovimientos = totalMovimientos;
     }
 }
