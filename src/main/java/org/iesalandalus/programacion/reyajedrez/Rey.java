@@ -14,10 +14,8 @@ public class Rey {
 
     public Rey(Color color){
         this();
-        if (color == Color.BLANCO)
-            posicion = new Posicion(1, 'e');
-        else
-            posicion = new Posicion(8,'e');
+        if (color == Color.NEGRO)
+            posicion = new Posicion(8,'e');  //quizás el new no sea necesario porque viene con el this().
     }
 
     public Color getColor() {
