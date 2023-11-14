@@ -4,6 +4,15 @@ public class Posicion {
     private int fila;
     private char columna;
 
+    public Posicion(int fila, char columna){
+        setFila(fila);
+        setColumna(columna);
+    }
+    public Posicion(Posicion posicion){
+        setFila(posicion.getFila());
+        setColumna(posicion.getColumna());
+    }
+
     public void setFila(int fila) {
         if (fila>8)
             throw new IllegalArgumentException("La fila no puede ser mayor que 8");
@@ -30,9 +39,6 @@ public class Posicion {
         return columna;
     }
 
-    public Posicion(int fila, char columna){
-        setFila(fila);
-        setColumna(columna);
-    }
+
 
 }
