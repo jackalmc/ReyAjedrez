@@ -50,6 +50,11 @@ public class Rey {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Rey " + color + ":" + posicion;
+    }
+
     public void mover(Direccion direccion) throws NullPointerException, OperationNotSupportedException {
         if (direccion == null)
             throw new NullPointerException("No se permite direcciones nulas");
@@ -74,6 +79,7 @@ public class Rey {
             }
             setTotalMovimientos(getTotalMovimientos()+1);
         }
+
 
 
 
