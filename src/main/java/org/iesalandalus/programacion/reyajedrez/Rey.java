@@ -6,6 +6,12 @@ public class Rey {
     private Posicion posicion;
     private int totalMovimientos;
 
+    public Rey() {
+        color = Color.BLANCO;
+        posicion = new Posicion(1,'e');
+        totalMovimientos = 0;
+    }
+
     public Color getColor() {
         return color;
     }
