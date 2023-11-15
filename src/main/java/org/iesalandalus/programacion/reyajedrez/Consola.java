@@ -49,6 +49,8 @@ public class Consola {
         System.out.println("8. NO   1. N    2. NE");
         System.out.println("7. O    X. X    3. E");
         System.out.println("6. SO   5. S    4. SE");
+        System.out.println("\n 9. Enroque corto.");
+        System.out.println("10. Enroque largo.");
     }
 
     public static int elegirDireccion(){
