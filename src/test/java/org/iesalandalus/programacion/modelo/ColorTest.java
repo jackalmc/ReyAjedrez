@@ -2,7 +2,7 @@ package org.iesalandalus.programacion.modelo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.iesalandanlus.programacion.reyajedrez.modelo.Color;
+import org.iesalandalus.programacion.reyajedrez.Color;
 import org.junit.jupiter.api.Test;
 
 

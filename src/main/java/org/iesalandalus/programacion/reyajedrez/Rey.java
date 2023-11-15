@@ -14,10 +14,14 @@ public class Rey {
         totalMovimientos = 0;
     }
 
-    public Rey(Color color){
+    public Rey(Color color) throws NullPointerException{
         this();
-        if (color == Color.NEGRO)
-            posicion = new Posicion(8,'e');  //quizás el new no sea necesario porque viene con el this().
+        if (color == null)
+            throw new NullPointerException("ERROR: El color no puede ser nulo.");
+        if (color == Color.NEGRO) {
+            posicion = new Posicion(8, 'e');  //quizás el new no sea necesario porque viene con el this().
+            this.color = Color.NEGRO;
+        }
     }
 
     public Color getColor() {
@@ -52,12 +56,12 @@ public class Rey {
 
     @Override
     public String toString() {
-        return "Rey " + color + ":" + posicion;
+        return "color=" + color + ", posicion=(" + posicion + ")";
     }
 
     public void mover(Direccion direccion) throws NullPointerException, OperationNotSupportedException {
         if (direccion == null)
-            throw new NullPointerException("No se permite direcciones nulas");
+            throw new NullPointerException("ERROR: La dirección no puede ser nula.");
         else {
             switch (direccion) {
                 case NORTE -> posicion = new Posicion(posicion.getFila() + 1, posicion.getColumna());

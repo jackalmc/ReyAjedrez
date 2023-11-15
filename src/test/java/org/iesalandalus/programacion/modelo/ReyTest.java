@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import javax.naming.OperationNotSupportedException;
 
-import org.iesaladanlus.programacion.reyajedrez.modelo.Color;
-import org.iesaladanlus.programacion.reyajedrez.modelo.Direccion;
-import org.iesaladanlus.programacion.reyajedrez.modelo.Posicion;
-import org.iesaladanlus.programacion.reyajedrez.modelo.Rey;
+import org.iesalandalus.programacion.reyajedrez.Color;
+import org.iesalandalus.programacion.reyajedrez.Direccion;
+import org.iesalandalus.programacion.reyajedrez.Posicion;
+import org.iesalandalus.programacion.reyajedrez.Rey;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,14 +29,14 @@ class ReyTest {
 	private static Rey reyNegro;
 
 	@BeforeEach
-	void asignarValoresReyes()
+	void asignarValoresReyes() throws OperationNotSupportedException
 	{
 		reyBlanco = new Rey(Color.BLANCO);
 		reyNegro = new Rey(Color.NEGRO);
 	}
 
 	@Test
-	void constructores()
+	void constructores() throws OperationNotSupportedException
 	{
 		// Test de constructor por defecto
 
