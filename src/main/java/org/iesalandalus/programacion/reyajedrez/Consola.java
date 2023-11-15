@@ -22,7 +22,11 @@ public class Consola {
 
         System.out.println("====");
         System.out.print("Introduzca elección (1-4): ");
-        opcion = Entrada.entero();
+
+        do {
+            opcion = Entrada.entero();
+        } while (opcion < 1 || opcion > 4);
+
         return opcion;
     }
 
@@ -32,4 +36,19 @@ public class Consola {
         System.out.println("7. O    X. X    3. E");
         System.out.println("6. SO   5. S    4. SE");
     }
+
+    public static int elegirDireccion(){
+        int opcion;
+
+        System.out.println("====");
+        System.out.print("Introduzca dirección (1-8): ");
+
+        do{
+            opcion = Entrada.entero();
+        } while (opcion < 1 || opcion > 8);
+
+        return opcion;
+    }
+
+
 }
