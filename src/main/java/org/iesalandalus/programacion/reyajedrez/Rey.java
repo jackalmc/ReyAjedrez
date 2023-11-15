@@ -49,8 +49,14 @@ public class Rey {
     }
 
     private boolean comprobarEnroque() throws OperationNotSupportedException{
-        if (getTotalMovimientos() != 0)
-            throw new OperationNotSupportedException("El Rey no está en su posición inicial");
+
+        if (this.color== Color.BLANCO && (posicion.getColumna() != 'e' || posicion.getFila() != 1))
+            throw new OperationNotSupportedException("ERROR: El rey no está en su posición inicial.");
+        else if (this.color== Color.NEGRO && (posicion.getColumna() != 'e' || posicion.getFila() != 8))
+            throw new OperationNotSupportedException("ERROR: El rey no está en su posición inicial.");
+        else if (getTotalMovimientos() != 0)
+            throw new OperationNotSupportedException("ERROR: El rey ya se ha movido antes.");
+
         return true;
     }
 
@@ -60,33 +66,32 @@ public class Rey {
     }
 
     public void mover(Direccion direccion) throws NullPointerException, OperationNotSupportedException {
-        if (direccion == null)
-            throw new NullPointerException("ERROR: La dirección no puede ser nula.");
-        else {
-            switch (direccion) {
-                case NORTE -> posicion = new Posicion(posicion.getFila() + 1, posicion.getColumna());
-                case NORESTE -> posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna() + 1));
-                case ESTE -> posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() + 1));
-                case SURESTE -> posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna() + 1));
-                case SUR -> posicion = new Posicion(posicion.getFila() - 1, posicion.getColumna());
-                case SUROESTE -> posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna() - 1));
-                case OESTE -> posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() - 1));
-                case NOROESTE -> posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna() - 1));
-                case ENROQUE_CORTO -> {
-                    if (comprobarEnroque())
-                        posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() + 2));
-                }
-                case ENROQUE_LARGO -> {
-                    if (comprobarEnroque())
-                        posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() - 2));
+        try{
+            if (direccion == null)
+                throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+            else {
+                switch (direccion) {
+                    case NORTE -> posicion = new Posicion(posicion.getFila() + 1, posicion.getColumna());
+                    case NORESTE -> posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna() + 1));
+                    case ESTE -> posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() + 1));
+                    case SURESTE -> posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna() + 1));
+                    case SUR -> posicion = new Posicion(posicion.getFila() - 1, posicion.getColumna());
+                    case SUROESTE -> posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna() - 1));
+                    case OESTE -> posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() - 1));
+                    case NOROESTE -> posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna() - 1));
+                    case ENROQUE_CORTO -> {
+                        if (comprobarEnroque())
+                            posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() + 2));
+                    }
+                    case ENROQUE_LARGO -> {
+                        if (comprobarEnroque())
+                            posicion = new Posicion(posicion.getFila(), (char) (posicion.getColumna() - 2));
+                    }
                 }
             }
-            setTotalMovimientos(getTotalMovimientos()+1);
+        }catch (IllegalArgumentException e){
+            throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
         }
-
-
-
-
-
+            setTotalMovimientos(getTotalMovimientos()+1);
     }
 }
