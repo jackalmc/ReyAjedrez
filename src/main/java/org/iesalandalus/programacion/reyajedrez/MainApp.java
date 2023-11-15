@@ -23,7 +23,7 @@ public class MainApp {
         switch (Consola.elegirOpcion()){
             case 1-> rey = new Rey(Color.BLANCO);
             case 2-> rey = new Rey(Color.NEGRO);
-        };
+        }
     }
 
     private static void mover(){
