@@ -41,16 +41,19 @@ public class MainApp {
                 case 9 -> rey.mover(Direccion.ENROQUE_CORTO);
                 case 10 -> rey.mover(Direccion.ENROQUE_LARGO);
             }
-        } catch (OperationNotSupportedException | NullPointerException e){
+        } catch (OperationNotSupportedException | NullPointerException | IllegalArgumentException e){
+            System.out.println("====");
             System.out.println(e.getMessage());
         }
     }
 
     private static void mostrarRey(){
+        System.out.println("====");
         if (rey != null)
             System.out.println(rey);
         else
             System.out.println("El rey no ha sido creado aún.");
+        System.out.println("====");
     }
 
 

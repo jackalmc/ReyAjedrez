@@ -17,18 +17,18 @@ public class Posicion {
 
     private void setFila(int fila) throws IllegalArgumentException{
         if (fila>8)
-            throw new IllegalArgumentException("La fila no puede ser mayor que 8");
+            throw new IllegalArgumentException("**La fila no puede ser mayor que 8**");
         else if (fila < 1)
-            throw new IllegalArgumentException("La fila no puede ser menor que 1");
+            throw new IllegalArgumentException("**La fila no puede ser menor que 1**");
         else
             this.fila = fila;
     }
 
     private void setColumna(char columna) throws IllegalArgumentException {
         if (columna > 'h')
-            throw new IllegalArgumentException("La columna no puede ser mayor que h");
+            throw new IllegalArgumentException("**La columna no puede ser mayor que h**");
         else if (columna < 'a')
-            throw new IllegalArgumentException("La columna no puede ser menor que a");
+            throw new IllegalArgumentException("**La columna no puede ser menor que a**");
         else
             this.columna = columna;
     }

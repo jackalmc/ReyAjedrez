@@ -59,9 +59,9 @@ public class Consola {
         System.out.println("====");
 
         do{
-            System.out.print("Introduzca dirección (1-8): ");
+            System.out.print("Introduzca movimiento (1-10): ");
             opcion = Entrada.entero();
-        } while (opcion < 1 || opcion > 8);
+        } while (opcion < 1 || opcion > 10);
 
         return opcion;
     }
