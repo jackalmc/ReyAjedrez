@@ -89,7 +89,7 @@ public class Rey {
                     }
                 }
             }
-        }catch (IllegalArgumentException e){
+        }catch (IllegalArgumentException e) {
             throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
         }
             setTotalMovimientos(getTotalMovimientos()+1);
