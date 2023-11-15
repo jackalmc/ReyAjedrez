@@ -2,8 +2,6 @@ package org.iesalandalus.programacion.reyajedrez;
 
 import org.iesalandalus.programacion.utilidades.Entrada;
 
-import java.sql.SQLOutput;
-
 public class Consola {
 
     public Consola(){
@@ -21,13 +19,27 @@ public class Consola {
         int opcion;
 
         System.out.println("====");
-        System.out.print("Introduzca elección (1-4): ");
 
         do {
+            System.out.print("Introduzca elección (1-4): ");
             opcion = Entrada.entero();
         } while (opcion < 1 || opcion > 4);
 
         return opcion;
+    }
+
+    public static void elegirOpcion(){
+        int opcion;
+
+        System.out.println("====");
+        System.out.println("1. Blanco");
+        System.out.println("2. Negro");
+        System.out.println("====");
+
+        do{
+            System.out.println("Elegir opción para el color (1-2)");
+            opcion = Entrada.entero();
+        } while (opcion < 1 || opcion > 2);
     }
 
     public static void mostrarMenuDirecciones(){
@@ -41,13 +53,17 @@ public class Consola {
         int opcion;
 
         System.out.println("====");
-        System.out.print("Introduzca dirección (1-8): ");
 
         do{
+            System.out.print("Introduzca dirección (1-8): ");
             opcion = Entrada.entero();
         } while (opcion < 1 || opcion > 8);
 
         return opcion;
+    }
+
+    public static void despedirse(){
+        System.out.println("Saliendo...");
     }
 
 
