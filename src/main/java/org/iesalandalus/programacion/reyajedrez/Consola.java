@@ -28,7 +28,7 @@ public class Consola {
         return opcion;
     }
 
-    public static void elegirOpcion(){
+    public static int elegirOpcion(){
         int opcion;
 
         System.out.println("====");
@@ -40,6 +40,8 @@ public class Consola {
             System.out.println("Elegir opción para el color (1-2)");
             opcion = Entrada.entero();
         } while (opcion < 1 || opcion > 2);
+
+        return opcion;
     }
 
     public static void mostrarMenuDirecciones(){
